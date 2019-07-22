@@ -1,14 +1,43 @@
-# rna-stability
+# SPI scores
+The SPI scores are published in three different parquet files.
 
+1. Full data set
+2. 80th percentile data set
+3. 99 percentile data set
 
-### Prerequisities
-
-Apache Spark 2.4+
-
-### Build command
+### Parquet locations
 ```
-sbt clean assembly
+s3://nch-igm-rna-stability/PRE SPI_hg19_full
 ```
+
+```
+s3://nch-igm-rna-stability/SPI_hg19_80th_perc
+```
+
+```
+s3://nch-igm-rna-stability/PRE SPI_hg19_99th_perc
+```
+
+##### Parquet Dataframe Fields
+
+Name  | Type | Description
+------|------| -------------
+CHROMOSOME | string | HG19
+POSITION | integer | HG19
+REF | string | HG19
+ALT | string | HG19
+Transcript | string | Assigned home transcript
+dMFE | double | Structural metrics from Vienna analysis 
+CFEED | integer | Structural metrics from Vienna analysis
+dCD | double | Structural metrics from Vienna analysis
+SPI | double | Computed constraint score
+dMFE_abs_perc | double | Percentile of this sSNV's score within its rna_context
+CFEED_perc | double | Percentile of this sSNV's score within its rna_context
+dCD_abs_perc | double | Percentile of this sSNV's score within its rna_context
+SPI_abs_perc | double | Percentile of this sSNV's score within its rna_context
+
+
+# rna-stability (Vienna scores)
 
 ### Pre-Built Data set 
 The rna-stability pipeline generates a large amount of data and can take quite a while to process. It is highly recommended that you use our pre-built Apache Parquet dataset rather than running the entire computation yourself. Also, our completed data set includes additional annotations from tools such as SnpEff and gnomAD, the steps of which are not shown in the pipeline below.
@@ -211,6 +240,15 @@ gnomAD_WG_vep | string | Consequence annotations from Ensembl VEP.
 
 
 #### Running the pipeline (Optional)
+
+### Prerequisities
+
+Apache Spark 2.4+
+
+### Build command
+```
+sbt clean assembly
+```
 
 Below are examples of running the pipeline on AWS EMR. These steps assume that the bootstrap actions scripts/ directory were run when the EMR cluster was started up.
 
