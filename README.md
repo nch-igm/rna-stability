@@ -7,7 +7,7 @@ The SPI scores are published in three different parquet files.
 
 ### Parquet locations
 ```
-s3://nch-igm-rna-stability/PRE SPI_hg19_full
+s3://nch-igm-rna-stability/SPI_hg19_full
 ```
 
 ```
@@ -15,7 +15,7 @@ s3://nch-igm-rna-stability/SPI_hg19_80th_perc
 ```
 
 ```
-s3://nch-igm-rna-stability/PRE SPI_hg19_99th_perc
+s3://nch-igm-rna-stability/SPI_hg19_99th_perc
 ```
 
 ##### Parquet Dataframe Fields
