@@ -26,6 +26,7 @@ CHROMOSOME | string | HG19
 POSITION | integer | HG19
 REF | string | HG19
 ALT | string | HG19
+rna_context_id | string | RNA reference and alternate
 Transcript | string | Assigned home transcript
 dMFE | double | Structural metrics from Vienna analysis 
 CFEED | integer | Structural metrics from Vienna analysis
