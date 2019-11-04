@@ -1,9 +1,25 @@
 # SPI scores
-The SPI scores are published in three different parquet files.
+The SPI scores are published in three different csv or parquet files.
 
 1. Full data set
 2. 80th percentile data set
 3. 99 percentile data set
+
+To download them from their AWS S3 bucket you will need to install the AWS CLI. Instructions can be found here: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
+
+
+### CSV locations
+```
+s3://nch-igm-rna-stability/SPI_hg19_full.csv.gz
+```
+
+```
+s3://nch-igm-rna-stability/SPI_hg19_80th_perc.csv.gz
+```
+
+```
+s3://nch-igm-rna-stability/SPI_hg19_99th_perc.csv.gz
+```
 
 ### Parquet locations
 ```
@@ -41,7 +57,7 @@ SPI_abs_perc | double | Percentile of this sSNV's score within its rna_context
 # rna-stability (Vienna scores)
 
 ### Pre-Built Data set 
-The rna-stability pipeline generates a large amount of data and can take quite a while to process. It is highly recommended that you use our pre-built Apache Parquet dataset rather than running the entire computation yourself. Also, our completed data set includes additional annotations from tools such as SnpEff and gnomAD, the steps of which are not shown in the pipeline below.
+The rna-stability pipeline generates a large amount of data and can take quite a while to process. It is highly recommended that you use our pre-built Apache Parquet or CSV datasets rather than running the entire computation yourself. Also, our completed data set includes additional annotations from tools such as SnpEff and gnomAD, the steps of which are not shown in the pipeline below.
 
 It can be found here:
 
