@@ -2,7 +2,7 @@
 
 For instructions on how to download pre-built datasets instructions can be found on the RNA Stability website:
 
-http://nch-igm-rna-stability.s3-website.us-east-2.amazonaws.com/
+https://igm-rna-stability.igmdev.org
 
 NOTE: It is highly recommended that you use these pre-built versions to save processing time and compute costs.
 
